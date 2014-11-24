@@ -39,7 +39,7 @@ public class PriceCompareRequestHandler extends HttpServlet {
 		Double[] price = new Double[OnlineStores.values().length];
 		int i = 0;
 		StringBuffer output = new StringBuffer();
-		Double leastPrice = null;
+		Double leastPrice=null;
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 
@@ -52,7 +52,8 @@ public class PriceCompareRequestHandler extends HttpServlet {
 		output.append("The Toy Store Offering Reasonable Price </h3> ");
 
 		try {
-			String reasonableStore = "";
+			String reasonableStore = "Not Available In These Stores!";
+			
 			for (OnlineStores store : OnlineStores.values()) {
 				System.out.println("The Online Toy Store : "
 						+ request.getParameter(store.toString()));
@@ -68,24 +69,29 @@ public class PriceCompareRequestHandler extends HttpServlet {
 						if (leastPrice == null) {
 							leastPrice = price[i];
 							reasonableStore = store.toString();
+							System.out.println("The least price is : " + leastPrice + " Offered By The store: "+ reasonableStore);
 						} 
 						if (price[i] < leastPrice) {
 							leastPrice = price[i];
 							reasonableStore = store.toString();
-							System.out.println(" Least Price Is Offered By The store "+ reasonableStore);
-							//System.out.println("The least price is : " + leastPrice + " Offered By The store: "+ reasonableStore);
+							//System.out.println(" Least Price Is Offered By The store "+ reasonableStore);
+							System.out.println("The least price is : " + leastPrice + " Offered By The store: "+ reasonableStore);
 						}
 
 					}
 
 				}
 				
-			}
-			//output.append("<h3> The Store : " + reasonableStore + "</br> Offers Least Price Compartively :" + leastPrice
+				}
+			//output.append("<html><font color=\"red\">"+"Please checkin atleast 2 checkbox"+"</font></html>");
+			output.append("<h3><html><font color=\"blue\"> The Store : " + reasonableStore + "</br> Offers Least Price :" + leastPrice
+					+ "</font></html></h3> </br>");
+			
+			//output.append("<h3>" + reasonableStore 
 				//	+ "</h3> </br>");
-			output.append("<h3>" + reasonableStore 
-					+ "</h3> </br>");
-		} catch (Exception e) {
+		}
+		
+		catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -94,5 +100,7 @@ public class PriceCompareRequestHandler extends HttpServlet {
 		out.println(output);
 
 	}
+
+	
 
 }
