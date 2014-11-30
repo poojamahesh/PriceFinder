@@ -1,7 +1,6 @@
 package com.pace.pricecompare.senders;
 
-public interface IWebsiteConnect
-{
+public interface IWebsiteConnect {
 
 	Double getPrice(String toyName) throws Exception;
 

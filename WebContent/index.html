@@ -1,50 +1,58 @@
 <html>
-<form id='pricefinder' onsubmit="return checkbox()" name="PriceCompare" action="PriceFinder" method="POST">
+<form id='pricefinder' onsubmit="return checkbox()" name="PriceCompare"
+	action="PriceFinder" method="POST">
 
 
 	<div class="header">
 
 		<h1>
 			<center>
-				<!--<img src="PriceCompare- Official.png" height="100" width="163"> -->
-				<font color="blue">PRICE COMPARE</font>
-			</center>
-			<center><img src="images/toys2.jpg"  style="width:304px;height:228px"><img src="images/toys.jpg"  style="width:304px;height:228px"></center>
-		</h1>
-		<br> <br>
 
+				<img src="images/PriceCompare- Official.png" height="100"
+					width="163"><font color="blue">PRICE COMPARE</font>
+			</center>
+			<center>
+				<img src="images/teddy.jpeg" style="width: 204px; height: 198px">
+			</center>
+		</h1>
 	</div>
 	<body>
 		<center>
 			<h3>
-				<font color="blue">Search Item: &nbsp; </font><input type="text" name="Item_Name" required />
-				</br>
-</br><font color="purple">Select Shops to Compare: </font></br>
-				</br> <input type="checkbox" name="AMAZON" id="AMAZON"  /><font color="blue"> Amazon </font>
-				<input type="checkbox" name="TOYSRUS" id="TOYSRUS"  /> <font color="blue">ToysRUs </font>
-				<input type="checkbox" name="WALMART" id="WALMART"  /><font color="blue"> Walmart</font> </br>
-				</br> <input type="submit" name="submit" id="submit" value="COMPARE">
+				<font color="blue">Search Item: &nbsp; </font><input type="text"
+					name="Item_Name" required /> </br> </br> <font color="purple">Select
+					Shops to Compare: </font></br> </br> <input type="checkbox" name="AMAZON"
+					id="AMAZON" /><font color="blue"> Amazon </font> <input
+					type="checkbox" name="TOYSRUS" id="TOYSRUS" /> <font color="blue">ToysRUs
+				</font> <input type="checkbox" name="WALMART" id="WALMART" /><font
+					color="blue"> Walmart</font> </br> </br> <input type="submit" name="submit"
+					id="submit" value="COMPARE">
 			</h3>
 		</center>
-		</form>
+		<center>
+			<a href="info.html"><bold> <font color="purple">Terms&Conditions</font></bold></a>
+		</center>
+</form>
 
 <script type="text/javascript" language="JavaScript">
-function checkbox() 
-{ 
+	function checkbox() {
 
-	var allchecked=0;
-	if(document.getElementById('AMAZON').checked)allchecked=1;
-	if(document.getElementById('TOYSRUS').checked)allchecked=1;
-	if(document.getElementById('WALMART').checked)allchecked=1;
-	if(allchecked==0)alert('Please checkIN atleast 2 stores/more than 2 stores'); 
+		var allchecked = 0;
+		if (document.getElementById('AMAZON').checked)
+			allchecked = 1;
+		if (document.getElementById('TOYSRUS').checked)
+			allchecked = 1;
+		if (document.getElementById('WALMART').checked)
+			allchecked = 1;
+		if (allchecked == 0)
+			alert('Please checkIN atleast 2 stores/more than 2 stores');
 
-	if(allchecked==1)
-	{
-		//document.forms["pricefinder"].
-	 document.PriceCompare.submit();
+		if (allchecked == 1) {
+			//document.forms["pricefinder"].
+			document.PriceCompare.submit();
+		}
+
 	}
-		
-}
 </script>
 
 </html>

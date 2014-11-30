@@ -12,19 +12,14 @@ import com.pace.pricecompare.senders.IWebsiteConnect;
 import com.pace.pricecompare.senders.ToysRUsWebsiteConnect;
 import com.pace.pricecompare.senders.WalmartWebsiteConnect;
 
-public class WebsiteFactory
-{
+public class WebsiteFactory {
 
-	
 	private static WebsiteFactory instance = null;
 
-	
-	private WebsiteFactory()
-	{
+	private WebsiteFactory() {
 	}
 
-	public static WebsiteFactory getInstance()
-	{
+	public static WebsiteFactory getInstance() {
 		if (instance == null)
 			instance = new WebsiteFactory();
 
@@ -32,11 +27,9 @@ public class WebsiteFactory
 
 	}
 
-	public IWebsiteConnect getSiteInstance(OnlineStores sitename)
-	{
+	public IWebsiteConnect getSiteInstance(OnlineStores sitename) {
 
-		switch (sitename)
-		{
+		switch (sitename) {
 
 		case AMAZON:
 			return new AmazonWebsiteConnect();
@@ -44,7 +37,7 @@ public class WebsiteFactory
 		case TOYSRUS:
 
 			return new ToysRUsWebsiteConnect();
-			
+
 		case WALMART:
 
 			return new WalmartWebsiteConnect();
